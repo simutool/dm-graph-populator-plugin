@@ -1,0 +1,27 @@
+
+Usage: import_domain_model [OPTIONS] upper_domain_model_data [lower_domain_model]   
+
+Imports the Domain Model into a neo4j Database. The domain models need to be saved as python files that contain at least one dictionary called 'classes'.
+
+Example of a python dictionary that can be imported: 
+
+    classes = {node: {property: ...,}, } [required]
+    relations = {relation: {property: ...,}, } [optional]
+    namespaces = {namespace: {property: ...,}, } [optional]
+
+For each node the properties 'label' and 'uri' are requried.
+For each relation the following properties are required: "label", "from_entity", "to_entity", "namespace".
+Things with missing properties will not be created. 
+
+If there are errors that prevent the script from correctly creating nodes the database is cleaered in order to leave it in a consitent state. 
+This is for exampel the case if a requried label is missing 
+
+Options:
+  --db DATABASE CONNECTION      State 'user:pwd@protokoll://ip:port' on which the neo4j database is reachable.
+                                Example 'user:pwd@http://example.com:' 
+                                If the string is not entered in the correct format you will be asked to provide the username and password.
+                                If no database connection is stated the script will print cypher queries to std_out.
+  -h, --help                    Shows this help screen. Is also displayed if no dictionary files are presented
+  -v, --verbose VERBOSE         Print which nodes or relations are created.
+  --vv VERY VERBOSE             Print cypher queries to std_out, even if db_connection is established.
+  --vvv VERY VERY VERBOSE       Print all information from verbose and very verbose option.
