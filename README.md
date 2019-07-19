@@ -1,4 +1,4 @@
-# Domain Model Creator
+This is a plugin to load python dicts representing a domain model into a Neo4j graph
 
 - Scripts handling the import of domain model information from xlxs files or python dictionary files to a neo4j database
 
