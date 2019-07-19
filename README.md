@@ -1,4 +1,4 @@
-# Readme for importing data to neo4j
+This is a plugin to load python dicts representing a domain model into a Neo4j graph
 
 ## The python-files containing the information for the domain-models
 
