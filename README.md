@@ -27,9 +27,9 @@ This is a plugin to load python dicts representing a domain model into a Neo4j g
 - They need to have the following structure:
 
 ``` python
-classes = { node: {property: ... }, }
-relations = { relation: {property: ... }, }
-namespaces = { namespace: {property: ... }, }
+classes =  [ { node: {property: ... }, ... ]
+relations = [ { relation: {property: ... }, ... ]
+namespaces = [ { namespace: {property: ... }, ... ]
 ```
 
 - `classes` is always required.
